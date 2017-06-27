@@ -4,7 +4,7 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Cocoapods compatible](https://img.shields.io/badge/Cocoapods-compatible-4BC51D.svg?style=flat)](https://cocoapods.org)
 
-Hotellook iOS SDK is a framework integrating a hotels search engine into your app. When your user books a hotel, you get paid. [Hotellook](https://itunes.apple.com/us/app/cheap-hotels-deals-and-discounts-hotellook/id762156897) official app are based on this framework.
+Hotellook iOS SDK is a framework integrating a hotels search engine into your app. When your user books a hotel, you get paid. [Hotellook](https://itunes.apple.com/us/app/cheap-hotels-deals-and-discounts-hotellook/id762156897) official app is based on this framework.
 
 ## Installation
 
