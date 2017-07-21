@@ -159,7 +159,7 @@ SWIFT_CLASS("_TtC12HotellookSDK15CancellableTask")
 @class NSCoder;
 
 SWIFT_CLASS("_TtC12HotellookSDK10HDKAirport")
-@interface HDKAirport : NSObject <NSCopying, NSCoding>
+@interface HDKAirport : NSObject <NSCoding, NSCopying>
 @property (nonatomic, readonly, copy) NSString * _Nonnull name;
 @property (nonatomic, readonly) double latitude;
 @property (nonatomic, readonly) double longitude;
@@ -236,7 +236,7 @@ SWIFT_CLASS("_TtC12HotellookSDK8HDKBadge")
 @class HDKSeason;
 
 SWIFT_CLASS("_TtC12HotellookSDK7HDKCity")
-@interface HDKCity : NSObject <NSCopying, NSCoding>
+@interface HDKCity : NSObject <NSCoding, NSCopying>
 @property (nonatomic, readonly, copy) NSString * _Nonnull cityId;
 @property (nonatomic, readonly, copy) NSString * _Nullable name;
 @property (nonatomic, readonly, copy) NSString * _Nullable latinName;
@@ -275,7 +275,7 @@ SWIFT_CLASS("_TtC12HotellookSDK9HDKConfig")
 @class NSNumberFormatter;
 
 SWIFT_CLASS("_TtC12HotellookSDK11HDKCurrency")
-@interface HDKCurrency : NSObject <NSCoding, NSCopying>
+@interface HDKCurrency : NSObject <NSCopying, NSCoding>
 @property (nonatomic, readonly, copy) NSString * _Nonnull code;
 @property (nonatomic, readonly, copy) NSString * _Nonnull symbol;
 @property (nonatomic, readonly, copy) NSString * _Nonnull text;
@@ -351,7 +351,7 @@ SWIFT_CLASS("_TtC12HotellookSDK16HDKDefaultsSaver")
 
 
 SWIFT_CLASS("_TtC12HotellookSDK11HDKDistrict")
-@interface HDKDistrict : NSObject <NSCopying, NSCoding>
+@interface HDKDistrict : NSObject <NSCoding, NSCopying>
 @property (nonatomic, readonly, copy) NSString * _Nonnull name;
 @property (nonatomic, readonly, copy) NSString * _Nonnull districtId;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
@@ -426,7 +426,7 @@ typedef SWIFT_ENUM(NSInteger, HDKHighlightType) {
 @class HDKHotelRoomPhoto;
 
 SWIFT_CLASS("_TtC12HotellookSDK8HDKHotel")
-@interface HDKHotel : NSObject <NSCopying, NSCoding>
+@interface HDKHotel : NSObject <NSCoding, NSCopying>
 @property (nonatomic, readonly, copy) NSString * _Nonnull hotelId;
 @property (nonatomic) NSInteger type;
 @property (nonatomic) float latitude;
@@ -541,7 +541,7 @@ SWIFT_CLASS("_TtC12HotellookSDK23HDKLocationListResponse")
 
 
 SWIFT_CLASS("_TtC12HotellookSDK16HDKLocationPoint")
-@interface HDKLocationPoint : NSObject <NSCopying, NSCoding>
+@interface HDKLocationPoint : NSObject <NSCoding, NSCopying>
 @property (nonatomic, readonly, copy) NSString * _Nonnull name;
 @property (nonatomic, readonly, strong) CLLocation * _Nonnull location;
 @property (nonatomic, readonly, copy) NSString * _Nonnull category;
@@ -673,7 +673,7 @@ SWIFT_CLASS("_TtC12HotellookSDK18HDKReviewHighlight")
 @class HDKRoomOptions;
 
 SWIFT_CLASS("_TtC12HotellookSDK7HDKRoom")
-@interface HDKRoom : NSObject <NSCopying, NSCoding>
+@interface HDKRoom : NSObject <NSCoding, NSCopying>
 @property (nonatomic, readonly, strong) HDKRoomOptions * _Nonnull options;
 @property (nonatomic, readonly, copy) NSString * _Nonnull internalTypeId;
 @property (nonatomic, readonly) float price;
@@ -793,7 +793,7 @@ SWIFT_CLASS("_TtC12HotellookSDK23HDKSearchCreateResponse")
 @class HDKSearchLocationPoint;
 
 SWIFT_CLASS("_TtC12HotellookSDK13HDKSearchInfo")
-@interface HDKSearchInfo : NSObject <NSCopying, NSCoding>
+@interface HDKSearchInfo : NSObject <NSCoding, NSCopying>
 @property (nonatomic, copy) NSArray<NSNumber *> * _Nonnull kidAgesArray;
 @property (nonatomic, copy) NSDate * _Nullable checkInDate;
 @property (nonatomic, copy) NSDate * _Nullable checkOutDate;
@@ -893,7 +893,7 @@ SWIFT_CLASS("_TtC12HotellookSDK23HDKTripTypeDistribution")
 
 
 SWIFT_CLASS("_TtC12HotellookSDK11HDKTrustyou")
-@interface HDKTrustyou : NSObject <NSCopying, NSCoding>
+@interface HDKTrustyou : NSObject <NSCoding, NSCopying>
 @property (nonatomic, readonly) NSInteger score;
 @property (nonatomic, readonly) NSInteger popularity;
 @property (nonatomic, readonly) NSInteger reviewsCount;
