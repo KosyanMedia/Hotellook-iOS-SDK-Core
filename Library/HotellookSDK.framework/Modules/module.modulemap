@@ -7,4 +7,5 @@ framework module HotellookSDK {
 
 module HotellookSDK.Swift {
     header "HotellookSDK-Swift.h"
+    requires objc
 }
