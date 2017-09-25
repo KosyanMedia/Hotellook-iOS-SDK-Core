@@ -12,7 +12,7 @@ Hotellook iOS SDK is a framework integrating a hotels search engine into your ap
 ```
 use_frameworks!
 pod 'HotellookSDK', :git => 'https://github.com/KosyanMedia/Hotellook-iOS-SDK-Core.git'
-pod 'SwiftProtobuf', :git => 'https://github.com/apple/swift-protobuf.git', :tag => '0.9.902'
+pod 'SwiftProtobuf', :git => 'https://github.com/apple/swift-protobuf.git', :tag => '0.9.905'
 ```
 
 **Carthage:**
