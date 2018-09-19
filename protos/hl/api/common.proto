@@ -1,0 +1,114 @@
+syntax = "proto3";
+option go_package = "hl/api";
+option swift_prefix = "PB";
+
+message Coords {
+    float lat = 1;
+    float lon = 2;
+}
+
+enum PropertyType {
+    OTHER = 0;
+    HOTEL = 1;
+    APARTHOTEL = 2;
+    BB = 3;
+    APARTMENT = 4;
+    MOTEL = 5;
+    GUEST = 6;
+    HOSTEL = 7;
+    RESORT = 8;
+    FARM = 9;
+    VACATION = 10;
+    LODGE = 11;
+    VILLA = 12;
+    ROOM = 13;
+}
+
+message Room {
+    uint32 adults = 1;
+    repeated uint32 children = 2;
+}
+
+enum ProposalOptionID {
+    none = 0;
+    bedrooms = 1;
+    breakfast = 2;
+    //It's better to use without_card_required
+    card_required = 3;
+    //It's better to use without_deposit
+    deposit = 4;
+    free_wifi = 5;
+    refundable = 6;
+    smoking = 7;
+    beds = 8;
+    available = 9;
+    hotel_website = 10;
+    private_price = 11;
+    penthouse = 12;
+    all_inclusive = 13;
+    price_type = 14;
+    air_conditioner = 15;
+    fan = 16;
+    balcony = 17;
+    terrace = 18;
+    dormitory = 19;
+    private_bathroom = 20;
+    view = 21;
+    view_sentence = 22;
+    without_deposit = 23;
+    without_card_required = 24;
+}
+
+message ProposalOptions {
+    message UintOption {
+        uint32 val = 1;
+    }
+    message BoolOption {
+        bool val = 1;
+    }
+    message StringOption {
+        string val = 1;
+    }
+    message StringUintMapOption {
+        map<string, uint32> val = 1;
+    }
+    UintOption bedrooms = 1;
+    BoolOption breakfast = 2;
+    BoolOption card_required = 3;
+    BoolOption deposit = 4;
+    BoolOption free_wifi = 5;
+    BoolOption refundable = 6;
+    BoolOption smoking = 7;
+    StringUintMapOption beds = 8;
+    UintOption available = 9;
+    BoolOption hotel_website = 10;
+    BoolOption private_price = 11;
+    BoolOption penthouse = 12;
+    BoolOption all_inclusive = 13;
+    StringOption price_type = 14;
+    BoolOption air_conditioner = 15;
+    BoolOption fan = 16;
+    BoolOption balcony = 17;
+    BoolOption terrace = 18;
+    BoolOption dormitory = 19;
+    BoolOption private_bathroom = 20;
+    StringOption view = 21;
+    StringOption view_sentence = 22;
+    BoolOption without_card_required = 23;
+    BoolOption without_deposit = 24;
+}
+
+message RoomType {
+    string name = 1;
+}
+
+message Discount {
+    message RoomDiscount {
+        int32 change_percentage = 1;
+        float old_price = 2;
+    }
+    message Room {
+        map<uint32, RoomDiscount> discounts = 1;
+    }
+    map<uint32, Room> gates_rooms = 1;
+}

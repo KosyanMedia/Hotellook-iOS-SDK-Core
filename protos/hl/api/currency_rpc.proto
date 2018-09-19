@@ -1,0 +1,29 @@
+syntax = "proto3";
+option go_package = "hl/api";
+option swift_prefix = "PB";
+
+import "google/api/annotations.proto";
+
+message CurrencyInfoRequest {
+    string locale = 1;
+    string fields = 2;
+}
+
+message CurrencyMeta {
+    string code = 1;
+    string name = 2;
+    string sign = 3;
+    string format = 4;
+    bool popular = 5;
+}
+
+message CurrencyInfoResponse {
+    map<string, float> rates = 1;
+    repeated CurrencyMeta meta = 2;
+}
+
+service CurrencyRpc {
+    rpc Info(CurrencyInfoRequest) returns(CurrencyInfoResponse) {
+        option (google.api.http).get = "/currency/info";
+    }
+}

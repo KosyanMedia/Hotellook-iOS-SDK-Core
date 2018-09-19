@@ -1,0 +1,25 @@
+syntax = "proto3";
+option go_package = "hl/api";
+option swift_prefix = "PB";
+
+message Gate {
+    string name = 1;
+    string beauty_name = 2;
+}
+
+message HotelReview {
+    message Rating {
+        float val = 1;
+    }
+    message Text {
+        string val = 1;
+    }
+    uint32 gate_id = 1;
+    int64 created_at = 2;
+    string author_name = 3;
+    Rating rating = 4;
+    string text = 5;
+    string text_plus = 6;
+    string text_minus = 7;
+    string url = 8;
+}

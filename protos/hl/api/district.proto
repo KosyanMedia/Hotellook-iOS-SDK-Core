@@ -1,0 +1,8 @@
+syntax = "proto3";
+option go_package = "hl/api";
+option swift_prefix = "PB";
+
+message District {
+    string name = 1;
+    uint32 id = 2;
+}

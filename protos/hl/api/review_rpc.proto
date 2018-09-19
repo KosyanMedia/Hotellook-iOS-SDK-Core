@@ -1,0 +1,31 @@
+syntax = "proto3";
+option go_package = "hl/api";
+option swift_prefix = "PB";
+
+import "google/api/annotations.proto";
+import "hl/api/review.proto";
+
+message ReviewHotelRequest {
+    uint32 id = 1;
+    string locale = 2;
+    uint32 limit = 3;
+    uint32 offset = 4;
+}
+
+message ReviewHotelResponse {
+    message Stat {
+        uint32 count = 1;
+    }
+    repeated HotelReview reviews = 2;
+    map<uint32, Gate> gates = 3;
+    map<uint32, Stat> gates_stat = 4;
+}
+
+service ReviewRpc {
+    rpc Hotel(ReviewHotelRequest) returns(ReviewHotelResponse) {
+        option (google.api.http) = {
+            get: "/review/hotel"
+        };
+    }
+}
+

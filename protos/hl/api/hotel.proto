@@ -1,0 +1,83 @@
+syntax = "proto3";
+option go_package = "hl/api";
+option swift_prefix = "PB";
+
+import "hl/api/common.proto";
+
+message RoomPhotos {
+    repeated uint64 photos_ids = 1;
+    uint32 count = 2;
+}
+
+message HotelRoomPhoto {
+    map<uint32,RoomPhotos> rooms = 1;
+}
+
+message Hotel {
+    message AmenitiesV2 {
+        message Value {
+            string slug = 1;
+            string price = 2;
+            string name = 3;
+        }
+        message AmenitiesCategory {
+            repeated Value values = 1;
+        }
+        map<string, AmenitiesCategory> categories = 1;
+    }
+    uint32 room_count = 1;
+    string check_in = 2;
+    string check_out = 3;
+    uint32 distance_to_center = 4;
+    string address = 5;
+    string name = 6;
+    uint32 location_id = 7;
+    repeated uint64 photos_ids = 8;
+    float minprice = 9;
+    PropertyType property_type = 10;
+    float rating = 11;
+    uint32 stars = 12;
+    uint32 year_opened = 13;
+    uint32 year_renovated = 14;
+    repeated uint32 locations_ids = 15;
+//    float median_price = 16;
+//    uint32 floor_count = 17;
+    uint32 popularity2 = 18;
+    map<uint32, uint32> locations_distances = 19;
+    //reviews_count - total count of reviews, which we can display
+    uint32 reviews_count = 20;
+    map<uint32, uint32> pois_distances = 21;
+    string description = 22;
+    Coords location = 23;
+    map<uint32, RoomPhotos> photos_by_room_type = 24;
+    repeated uint32 districts_ids = 25;
+//    string chain = 26;
+    map<string, uint32> scoring = 27;
+    uint32 id = 28;
+    uint32 popularity = 29;
+    AmenitiesV2 amenitiesv2 = 30;
+    string latin_name = 31;
+    //DEPRECATED: use amenities
+    //repeated uint32 filters = 32;
+    bool is_rentals = 33;
+    bool has_rentals = 34;
+    uint32 photos_count = 35;
+    string latin_full_name = 36;
+    string full_name = 37;
+    int32 property_type_id = 38;
+    repeated uint32 amenities = 39;
+}
+
+message KnownGuests {
+    message Room {
+        uint32 adults = 1;
+        uint32 children = 2;
+    }
+    repeated Room rooms = 1;
+}
+
+message Amenity {
+    string slug = 1;
+    string name = 2;
+    string category = 3;
+}

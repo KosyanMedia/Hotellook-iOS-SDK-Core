@@ -1,0 +1,61 @@
+syntax = "proto3";
+option go_package = "hl/api";
+option swift_prefix = "PB";
+
+import "google/api/annotations.proto";
+import "hl/api/district.proto";
+import "hl/api/poi.proto";
+import "hl/api/hotel.proto";
+import "hl/api/trustyou.proto";
+import "hl/api/location.proto";
+
+message LocationInfoRequest {
+    repeated uint32 locations_ids = 1;
+    string locale = 2;
+    // fields use to define what fields needs in response
+    string fields = 3;
+    // Remove hotels without minprices from response
+    bool hide_without_minprice = 4;
+    // If hotel doesn't have ty data, set rating as 0
+    bool use_trustyou_rating = 5;
+    float lat = 6;
+    float lon = 7;
+    // Add rentals to reponse, need for apartments app
+    bool rentals = 8;
+    // hide_pois_without_name - filtered pois without name
+    bool hide_pois_without_name = 9;
+}
+
+message LocationInfoResponse {
+    map<uint32,Location> locations = 1;
+    map<uint32,Poi> pois = 2;
+    map<uint32,District> districts = 3;
+    map<uint32,Hotel> hotels = 4;
+    map<uint32,Trustyou> trustyou = 5;
+    map<uint32,KnownGuests> hotels_known_guests = 6;
+    map<uint32,Amenity> hotels_amenities = 8;
+    map<uint32,HotelRoomPhoto> hotels_room_photos = 9;
+}
+
+message LocationTopRequest {
+    string locale = 1;
+    uint32 limit = 2;
+}
+
+message LocationTopResponse {
+    repeated Location locations = 1;
+}
+
+service LocationRpc {
+    rpc Info(LocationInfoRequest) returns(LocationInfoResponse) {
+        option (google.api.http) = {
+            get: "/location/info"
+        };
+    }
+    rpc Top(LocationTopRequest) returns(LocationTopResponse) {
+        option (google.api.http) = {
+            get: "/location/top"
+        };
+    }
+}
+

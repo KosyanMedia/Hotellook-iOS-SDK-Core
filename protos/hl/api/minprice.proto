@@ -1,0 +1,28 @@
+syntax = "proto3";
+option go_package = "hl/api";
+option swift_prefix = "PB";
+
+import "google/api/annotations.proto";
+
+message MinpriceCalendarRequest {
+    uint32 location_id = 1;
+    uint32 hotel_id = 2;
+    string currency = 3;
+    uint32 adults = 4;
+    uint32 price_groups = 5;
+}
+
+message MinpriceCalendarResponse {
+    message Price {
+        float price = 1;
+        uint32 rate = 2;
+    }
+    map<string,Price> dates = 1;
+    map<string,float> points = 2;
+}
+
+service MinpriceRpc {
+    rpc Calendar(MinpriceCalendarRequest) returns(MinpriceCalendarResponse) {
+        option (google.api.http).get = "/minprice/calendar";
+    }
+}

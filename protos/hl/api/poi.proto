@@ -1,0 +1,14 @@
+syntax = "proto3";
+option go_package = "hl/api";
+option swift_prefix = "PB";
+
+import "hl/api/common.proto";
+
+message Poi {
+//    float rating = 1;
+    string category = 2;
+    string name = 3;
+//    bool confirmed = 4;
+    Coords location = 5;
+    uint32 id = 6;
+}

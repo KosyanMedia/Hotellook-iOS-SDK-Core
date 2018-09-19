@@ -1,0 +1,132 @@
+syntax = "proto3";
+option go_package = "hl/api";
+option swift_prefix = "PB";
+
+message Trustyou {
+    message Snippet {
+        string text = 1;
+        float confidence = 2;
+        repeated string category_id_list = 3;
+        string sentiment = 4;
+    }
+    message SubCategoryList {
+        float count = 1;
+        string ratio = 2;
+        uint32 score = 3;
+        uint32 review_count = 4;
+        string category_name = 5;
+        string text = 6;
+        float relevance = 7;
+        string sentiment = 8;
+        string short_text = 9;
+        string category_id = 10;
+        repeated Snippet highlight_list = 11;
+    }
+    message CategoryList {
+        string text = 1;
+        uint32 score = 2;
+        string category_id = 3;
+    }
+    message BadgeData {
+        uint32 score = 1;
+        float popularity = 2;
+        string category_id = 3;
+        string category_name = 4;
+        float global_popularity = 5;
+    }
+    message GoodToKnow {
+        float count = 1;
+        string ratio = 2;
+        uint32 score = 3;
+        uint32 review_count = 4;
+        string category_name = 5;
+        string text = 6;
+        float relevance = 7;
+        string sentiment = 8;
+        string short_text = 9;
+        string category_id = 10;
+        repeated Snippet highlight_list = 11;
+    }
+    message SentimentScoreList {
+        float count = 1;
+        string ratio = 2;
+        uint32 score = 3;
+        uint32 review_count = 4;
+        string category_name = 5;
+        string text = 6;
+        float relevance = 7;
+        string sentiment = 8;
+        string short_text = 9;
+        string category_id = 10;
+        repeated Snippet highlight_list = 11;
+        repeated SubCategoryList sub_category_list = 12;
+        repeated Snippet summary_sentence_list = 13;
+    }
+    message HotelType {
+        float count = 1;
+        string ratio = 2;
+        uint32 score = 3;
+        uint32 review_count = 4;
+        string category_name = 5;
+        string text = 6;
+        float relevance = 7;
+        string sentiment = 8;
+        string short_text = 9;
+        string category_id = 10;
+        repeated Snippet highlight_list = 11;
+        repeated SubCategoryList sub_category_list = 12;
+        float global_popularity = 13;
+    }
+    message Badge {
+        string text = 1;
+        string subtext = 2;
+        repeated Snippet snippets = 3;
+        string badge_type = 4;
+        BadgeData badge_data = 5;
+    }
+    message GenderTalks {
+        float count = 1;
+        string ratio = 2;
+        uint32 score = 3;
+        string text = 4;
+        string gender = 5;
+        float relevance = 6;
+        string sentiment = 7;
+        string short_text = 8;
+        string category_id = 9;
+        uint32 review_count = 10;
+        string category_name = 11;
+        repeated Snippet highlight_list = 12;
+    }
+    message AltSummary {
+        string text = 1;
+        uint32 score = 2;
+        float popularity = 3;
+        repeated CategoryList category_list = 4;
+        float global_popularity = 5;
+        string score_description = 6;
+    }
+    message Summary {
+        uint32 reviews_count = 1;
+        uint32 score = 2;
+        uint32 popularity = 3;
+        string text = 4;
+//        string ratio = 5;
+    }
+    message LanguageSplit {
+        uint32 percentage = 1;
+//        map<string, uint32> trip_type_split = 2;
+    }
+    message TripTypeSplit {
+        map<string, uint32> trip_type_split = 1;
+    }
+    repeated GoodToKnow good_to_know = 1;
+    repeated SentimentScoreList sentiment_score_list = 2;
+//    repeated HotelType hotel_type = 3;
+//    repeated Badge badges = 4;
+//    repeated GenderTalks gender_talks = 5;
+//    repeated AltSummary alt_summary = 6;
+    map<string, LanguageSplit> language_split = 7;
+    TripTypeSplit trip_type_split = 8;
+    Summary  summary = 9;
+}

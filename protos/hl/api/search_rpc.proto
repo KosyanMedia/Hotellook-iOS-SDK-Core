@@ -1,0 +1,141 @@
+syntax = "proto3";
+option go_package = "hl/api";
+option swift_prefix = "PB";
+
+import "google/api/annotations.proto";
+
+import "hl/api/common.proto";
+
+
+
+message SearchResultResponse {
+    message Proposal {
+        uint32 gate_id = 1;
+        uint32 internal_type_id = 2;
+        string name = 3;
+//        DEPRECATED
+        string pid = 4;
+        float price = 5;
+        float price_usd = 6;
+        uint32 room_id = 7;
+        ProposalOptions options = 8;
+        string deeplink = 9;
+    }
+    message Gate {
+        string name = 1;
+        bool received = 2;
+        uint32 hotels_count = 3;
+    }
+    message Hotel {
+        repeated Proposal proposals = 1;
+    }
+    message Discount {
+        message RoomDiscount {
+            int32 change_percentage = 1;
+            float old_price = 2;
+        }
+        message Room {
+            map<uint32, RoomDiscount> discounts = 1;
+        }
+        map<uint32, Room> gates_rooms = 1;
+    }
+    message Highlights {
+        message Highlight {
+            map<uint32, string> room = 1;
+        }
+        map<uint32,Highlight> gates = 1;
+    }
+    message Badge {
+        string label = 1;
+        string color = 2;
+    }
+    message HotelsBadges {
+        repeated string badges = 1;
+    }
+    message Badges {
+        map<uint32, uint32> hotels_rank = 1;
+        map<string, Badge> badges = 2;
+        map<uint32, HotelsBadges> hotels_badges = 3;
+    }
+    map<uint32, Gate> gates = 1;
+    bool stop = 2;
+    map<uint32, Hotel> hotels = 3;
+    map<uint32, Discount> hotels_discounts = 4;
+    map<uint32, Highlights> hotels_highlights = 5;
+    Badges badges = 6;
+}
+
+message SearchResultRequest {
+    string search_id = 1;
+    repeated uint32 hotels_ids = 2;
+    bool last_request_failed = 3;
+    repeated uint32 received_gates_ids = 4;
+}
+
+message SearchCreateRequest {
+    repeated uint32 hotels_ids = 1;
+    string check_in = 2;
+    string check_out = 3;
+    string currency = 4;
+    string locale = 5;
+    string marker = 6;
+    string host = 7;
+    repeated uint32 locations_ids = 8;
+    string mobile_token = 9;
+    bool allow_en = 10;
+    string uuid = 11;
+    repeated Room rooms = 12;
+    map<string, string> flags = 13;
+    uint32 result_chunk_size = 14;
+    string fields = 15;
+}
+
+message SearchCreateResponse {
+    message MobileMeta {
+        string ab_group = 1;
+        string ab_name = 2;
+    }
+    string search_id = 1;
+    uint32 results_ttl = 2;
+    repeated uint32 gates_list = 3;
+    map<uint32, string> gates_names = 4;
+    repeated uint32 gates_sorted_order = 5;
+    repeated uint32 gates_to_show_user= 6;
+    map<uint32, RoomType> room_types = 7;
+    MobileMeta mobile_meta = 8;
+    map<uint32, uint32> results_ttl_by_gate = 9;
+}
+
+message ClickRequest {
+    string search_id = 1;
+    uint32 hotel_id = 2;
+    uint32 room_id = 3;
+    uint32 gate_id = 4;
+}
+
+message ClickResponse {
+    string deeplink = 1;
+    float price = 2;
+    string gate_name = 3;
+    bool official_website = 4;
+    repeated string webviewjs = 5;
+}
+
+service SearchRpc {
+    rpc Create(SearchCreateRequest) returns(SearchCreateResponse) {
+        option (google.api.http) = {
+            post: "/search/create"
+            body: "*"
+        };
+    }
+    rpc Result(SearchResultRequest) returns(SearchResultResponse) {
+        option (google.api.http) = {
+            get: "/search/result"
+        };
+    }
+    rpc Click(ClickRequest) returns(ClickResponse) {
+        option (google.api.http) = {
+            get: "/search/click"
+        };
+    }
+}

@@ -1,0 +1,42 @@
+syntax = "proto3";
+option go_package = "hl/api";
+option swift_prefix = "PB";
+
+import "hl/api/common.proto";
+
+message Location {
+    message SeasonDate {
+        string from = 1;
+        string to = 2;
+    }
+    message Season {
+        SeasonDate current_season = 1;
+        SeasonDate next_season = 2;
+    }
+    message PropertyTypesCount {
+        map<int32, uint32> by_types = 1;
+        uint32 total = 2;
+    }
+    map<string, Season> seasons = 1;
+    string name = 2;
+    string country_name = 3;
+    uint32 country_id = 4;
+    map<uint32, string> declensions = 5;
+    PropertyTypesCount property_types_count = 6;
+    string timezone = 7;
+    repeated string iatas = 8;
+    Coords center_coords = 9;
+    string full_name = 10;
+    repeated uint32 pois_ids = 11;
+    string latin_name = 12;
+    string latin_country_name = 13;
+    uint32 id = 14;
+    repeated string zones = 15;
+    string state_code = 16;
+    string code = 17;
+    string country_code = 18;
+    string latin_full_name = 19;
+    string path = 20;
+}
+
+

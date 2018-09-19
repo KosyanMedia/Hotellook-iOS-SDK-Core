@@ -1,0 +1,35 @@
+syntax = "proto3";
+option go_package = "hl/api";
+option swift_prefix = "PB";
+
+import "google/api/annotations.proto";
+import "hl/api/location.proto";
+import "hl/api/district.proto";
+import "hl/api/trustyou.proto";
+import "hl/api/poi.proto";
+import "hl/api/hotel.proto";
+
+message HotelInfoRequest {
+    repeated uint32 hotels_ids = 1;
+    string locale = 2;
+    string fields = 3;
+    bool use_trustyou_rating = 4;
+    // hide_pois_without_name - filtered pois without name
+    bool hide_pois_without_name = 9;
+}
+
+message HotelInfoResponse {
+    map<uint32, Hotel> hotels = 1;
+    map<uint32, Trustyou> trustyou = 2;
+    map<uint32, District> districts = 3;
+    map<uint32, Poi> pois = 4;
+    map<uint32, Location> locations = 5;
+}
+
+service HotelRpc {
+    rpc Info(HotelInfoRequest) returns(HotelInfoResponse) {
+        option (google.api.http) = {
+            get: "/hotel/info"
+        };
+    }
+}

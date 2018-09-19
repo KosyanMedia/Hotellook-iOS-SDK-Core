@@ -1,0 +1,31 @@
+syntax = "proto3";
+option go_package = "hl/api";
+option swift_prefix = "PB";
+
+import "google/api/annotations.proto";
+import "hl/api/hotel.proto";
+import "hl/api/location.proto";
+import "hl/api/airport.proto";
+
+message CompleteRequest {
+    // required field
+    string term = 1;
+    // required field
+    string locale = 2;
+    // max elements in each group, optional
+    uint32 limit = 3;
+    string fields = 4;
+}
+
+message CompleteResponse {
+    repeated Hotel hotels = 1;
+    repeated Location cities = 2;
+    repeated Airport airports = 3;
+    map<uint32, Location> locations = 4;
+}
+
+service CompleteRpc {
+    rpc Search(CompleteRequest) returns(CompleteResponse) {
+        option (google.api.http).get = "/complete/search";
+    }
+}
