@@ -1,3 +1,4 @@
+@objcMembers
 final public class HDKDeeplinkInfo: NSObject {
     public let url: String
     public let scripts: [String]

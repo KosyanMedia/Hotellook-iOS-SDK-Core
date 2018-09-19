@@ -10,6 +10,7 @@ extension HDKResource: URLRequestConvertible {
     }
 }
 
+@objcMembers
 public class CancellableTask: NSObject, Cancellable {
     private let task: Request
     init(task: Request) {

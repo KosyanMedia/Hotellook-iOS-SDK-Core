@@ -1,3 +1,4 @@
+@objcMembers
 public final class HDKAmenity: NSObject, NSCoding {
     public let name: String
     public let slug: String

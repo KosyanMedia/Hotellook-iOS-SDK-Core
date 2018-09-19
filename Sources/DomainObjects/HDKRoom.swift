@@ -5,6 +5,7 @@
     case discount = 3
 }
 
+@objcMembers
 public final class HDKRoom: NSObject, NSCoding, NSCopying {
     public let options: HDKRoomOptions
     public let internalTypeId: String

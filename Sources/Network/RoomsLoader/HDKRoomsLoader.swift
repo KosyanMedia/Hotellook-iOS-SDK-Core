@@ -15,6 +15,7 @@ import Foundation
     func searchLoaderCancelled()
 }
 
+@objcMembers
 public class HDKRoomsLoader: NSObject {
     private let kMaxSearchDuration: TimeInterval = 90
 

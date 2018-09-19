@@ -1,5 +1,6 @@
 import Foundation
 
+@objcMembers
 public class HDKDateUtil: NSObject {
 
     // MARK: - Formatters

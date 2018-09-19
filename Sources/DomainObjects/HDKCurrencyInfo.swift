@@ -1,3 +1,4 @@
+@objcMembers
 public final class HDKCurrencyInfo: NSObject, NSCoding {
     public let localeCurrencies: [HDKCurrency]
     public let otherCurrencies: [HDKCurrency]

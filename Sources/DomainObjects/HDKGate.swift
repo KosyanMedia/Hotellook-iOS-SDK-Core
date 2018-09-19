@@ -1,3 +1,4 @@
+@objcMembers
 public final class HDKGate: NSObject {
     public let gateId: String
     public let name: String?

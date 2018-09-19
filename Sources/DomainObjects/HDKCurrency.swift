@@ -1,3 +1,4 @@
+@objcMembers
 public final class HDKCurrency: NSObject, NSCopying, NSCoding {
     public let code: String
     public let symbol: String

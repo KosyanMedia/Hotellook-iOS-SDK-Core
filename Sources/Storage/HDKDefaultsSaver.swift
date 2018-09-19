@@ -1,5 +1,6 @@
 import Foundation
 
+@objcMembers
 public class HDKDefaultsSaver: NSObject {
 
     private static let kDefaultsValueKey: String = "Value"

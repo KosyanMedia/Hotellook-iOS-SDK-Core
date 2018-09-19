@@ -1,6 +1,7 @@
 import Foundation
 import KeychainSwift
 
+@objcMembers
 public class HDKTokenManager: NSObject {
     private static let kMobileTokenKey = "mobileTokenKey"
 

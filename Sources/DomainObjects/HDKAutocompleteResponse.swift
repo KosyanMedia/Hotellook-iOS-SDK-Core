@@ -1,3 +1,4 @@
+@objcMembers
 public final class HDKAutocompleteResponse: NSObject {
     public let hotels: [HDKHotel]
     public let cities: [HDKCity]

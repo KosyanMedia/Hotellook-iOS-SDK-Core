@@ -1,3 +1,4 @@
+@objcMembers
 public final class HDKSeason: NSObject, NSCoding {
     public static let kBeachSeasonCategory: String = "beach"
     public static let kSkiSeasonCategory: String = "ski"

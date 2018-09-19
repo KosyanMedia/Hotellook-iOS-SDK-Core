@@ -1,3 +1,4 @@
+@objcMembers
 public class HDKConfig: NSObject {
     public let appHostName: String
     public let lang: String

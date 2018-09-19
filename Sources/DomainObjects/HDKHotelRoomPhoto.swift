@@ -1,5 +1,6 @@
 import UIKit
 
+@objcMembers
 public final class HDKHotelRoomPhoto: NSObject, NSCoding {
 
     public let photoPreviewInfoByRoomTypes: [String: HDKRoomPhotoPreviewInfo]

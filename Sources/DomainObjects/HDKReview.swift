@@ -1,5 +1,6 @@
 import Foundation
 
+@objcMembers
 public final class HDKReviewsResponse {
     public let reviews: [HDKReview]
 
@@ -18,6 +19,7 @@ public final class HDKReviewsResponse {
     }
 }
 
+@objcMembers
 public final class HDKReview: NSObject {
     public let gate: HDKGate
     public let createdAt: Date

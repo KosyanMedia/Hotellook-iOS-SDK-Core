@@ -1,3 +1,4 @@
+@objcMembers
 public final class HDKGoodToKnow: NSObject, NSCoding {
     public let text: String
     public let score: Int

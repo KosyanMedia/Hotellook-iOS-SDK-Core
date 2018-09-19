@@ -1,5 +1,6 @@
 import CoreLocation
 
+@objcMembers
 open class HDKSearchLocationPoint: NSObject, NSCoding {
     public let title: String
     open var location: CLLocation

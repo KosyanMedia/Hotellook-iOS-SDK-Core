@@ -1,3 +1,4 @@
+@objcMembers
 public final class HDKCity: NSObject, NSCoding, NSCopying {
     public let cityId: String
     public let name: String?

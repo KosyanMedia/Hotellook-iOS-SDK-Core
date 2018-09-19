@@ -1,3 +1,4 @@
+@objcMembers
 public final class HDKKnownGuestsRoom: NSObject, NSCoding {
     public let adults: Int
     public let children: Int
@@ -18,6 +19,7 @@ public final class HDKKnownGuestsRoom: NSObject, NSCoding {
     }
 }
 
+@objcMembers
 public final class HDKKnownGuests: NSObject, NSCoding {
     public let rooms: [HDKKnownGuestsRoom]
 

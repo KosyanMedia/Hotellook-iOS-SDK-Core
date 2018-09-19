@@ -1,3 +1,4 @@
+@objcMembers
 public final class HDKHotel: NSObject, NSCoding, NSCopying {
     public let hotelId: String
     public var type: Int = 0
@@ -168,12 +169,7 @@ public final class HDKHotel: NSObject, NSCoding, NSCopying {
         checkOutTime = hotel.checkOutTime
         districts = hotel.districts
         importantPoiArray = hotel.importantPoiArray
-
-        // Cities may be different for autocomplete and hotel details
-        // We use first valid city to prevent bugs with favotites
-        if city == nil || city?.cityId == hotel.city?.cityId {
-            city = hotel.city
-        }
+        city = hotel.city
     }
 
     private static func parsePhotosByRoomType(from proto: PBHotel) -> [String: [String]] {

@@ -1,5 +1,6 @@
 import Foundation
 
+@objcMembers
 public class HDKHotelInfoResponse: NSObject {
 
     let hotels: [HDKHotel]

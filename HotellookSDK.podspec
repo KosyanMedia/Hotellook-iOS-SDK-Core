@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
   s.name         = 'HotellookSDK'
-  s.version      = '1.0.7'
+  s.version      = '1.0.8'
   s.license      = { :type => 'MIT' }
   s.homepage     = 'https://github.com/KosyanMedia/Hotellook-iOS-SDK-Core'
   s.authors      = { 'Hotellook iOS Team' => 'support@aviasales.ru' }
   s.summary      = 'Integrate hotels search framework in your apps.'
-  s.source       = { :git => 'https://github.com/KosyanMedia/Hotellook-iOS-SDK-Core.git', :tag => "v1.0.7" }
+  s.source       = { :git => 'https://github.com/KosyanMedia/Hotellook-iOS-SDK-Core.git', :tag => "v1.0.8" }
   s.platform     = :ios, '9.0'
   s.source_files  = ["Sources/**/*.{swift,h,m}", "SupportFiles/HotellookSDK.h"]
   s.module_map  = 'SupportFiles/HotellookSDK.modulemap'

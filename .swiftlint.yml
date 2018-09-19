@@ -1,0 +1,20 @@
+excluded:
+  - Carthage
+  - Sources/Generated
+force_cast: warning
+line_length:
+  warning: 120
+  error: 300
+function_body_length:
+  warning: 50
+  error: 100
+disabled_rules:
+  - line_length
+  - force_cast
+  - file_length
+  - type_body_length
+  - unused_closure_parameter
+  - shorthand_operator
+  - todo
+  - superfluous_disable_command
+

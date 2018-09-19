@@ -1,6 +1,7 @@
 import Foundation
 import CoreLocation
 
+@objcMembers
 public class HDKFacade: NSObject {
     private let requestExecutor: HDKRequestExecutor
     private let api: HDKResourceFactory

@@ -1,3 +1,4 @@
+@objcMembers
 public final class HDKReviewHighlight: NSObject {
     public let score: Int
     public let quotes: [String]

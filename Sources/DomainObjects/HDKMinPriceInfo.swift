@@ -4,6 +4,7 @@
     case expensive = 2
 }
 
+@objcMembers
 public final class HDKMinPriceItem: NSObject {
     public let rate: HDKMinPriceRate
     public let price: Float
@@ -14,6 +15,7 @@ public final class HDKMinPriceItem: NSObject {
     }
 }
 
+@objcMembers
 public final class HDKMinPriceInfo: NSObject {
     public let pricesForDates: [String: HDKMinPriceItem]
     public let currency: HDKCurrency

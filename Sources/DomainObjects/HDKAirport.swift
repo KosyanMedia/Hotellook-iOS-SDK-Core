@@ -1,3 +1,4 @@
+@objcMembers
 public class HDKAirport: NSObject, NSCoding, NSCopying {
     public let name: String
     public let latitude: Double

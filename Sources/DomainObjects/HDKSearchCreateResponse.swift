@@ -1,3 +1,4 @@
+@objcMembers
 public final class HDKSearchCreateResponse: NSObject {
     public let searchId: String
     public let resultsTTL: Int

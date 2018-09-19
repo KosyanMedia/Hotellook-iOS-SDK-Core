@@ -1,3 +1,4 @@
+@objcMembers
 public final class HDKLanguageDistribution: NSObject, NSCoding {
     public let lang: String
     public let percentage: Int

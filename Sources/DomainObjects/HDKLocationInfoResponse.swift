@@ -1,5 +1,6 @@
 import Foundation
 
+@objcMembers
 public class HDKLocationListResponse: NSObject {
     public let cities: [String: HDKLocationInfoResponse]
 
@@ -71,6 +72,7 @@ public class HDKLocationListResponse: NSObject {
 
 }
 
+@objcMembers
 public class HDKLocationInfoResponse: NSObject {
     public let hotels: [HDKHotel]
     public let city: HDKCity

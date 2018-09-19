@@ -1,3 +1,4 @@
+@objcMembers
 public final class HDKMarketingParams: NSObject {
     public let utm: String?
     public let hls: String?

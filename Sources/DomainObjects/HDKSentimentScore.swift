@@ -1,3 +1,4 @@
+@objcMembers
 public final class HDKSentimentScore: NSObject, NSCoding {
     public let name: String
     public let score: Int

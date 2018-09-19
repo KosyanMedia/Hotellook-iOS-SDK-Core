@@ -1,5 +1,6 @@
 import CoreLocation
 
+@objcMembers
 public final class HDKLocationPointCategory: NSObject {
     public static let kAirport = "airport"
     public static let kBeach = "beach"
@@ -12,6 +13,7 @@ public final class HDKLocationPointCategory: NSObject {
     public static let kCustomLocation = "customLocation"
 }
 
+@objcMembers
 open class HDKLocationPoint: NSObject, NSCoding, NSCopying {
 
     public let name: String

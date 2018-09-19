@@ -1,3 +1,4 @@
+@objcMembers
 public final class HDKAmenityShort: NSObject, NSCoding {
     public let amenityId: String
     public let slug: String

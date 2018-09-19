@@ -1,3 +1,4 @@
+@objcMembers
 public final class HDKTripTypeDistribution: NSObject, NSCoding {
     public let percentage: Int
     public let type: String

@@ -1,3 +1,4 @@
+@objcMembers
 public final class HDKRoomType: NSObject, NSCoding {
     public let name: String
 

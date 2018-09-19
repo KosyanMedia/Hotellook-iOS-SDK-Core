@@ -1,3 +1,4 @@
+@objcMembers
 public final class HDKRoomOptions: NSObject, NSCoding {
 
     public let airConditioner: Bool?

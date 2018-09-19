@@ -1,3 +1,4 @@
+@objcMembers
 public final class HDKAmenitiesList: NSObject, NSCoding {
     public let hotel: [HDKAmenity]
     public let room: [HDKAmenity]

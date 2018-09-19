@@ -1,3 +1,4 @@
+@objcMembers
 public final class HDKBadge: NSObject {
     public let systemName: String
     public let color: String

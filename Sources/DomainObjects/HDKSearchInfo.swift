@@ -1,3 +1,4 @@
+@objcMembers
 open class HDKSearchInfo: NSObject, NSCoding, NSCopying {
     open var kidAgesArray: [Int]
     open var checkInDate: Date?

@@ -1,3 +1,4 @@
+@objcMembers
 public final class HDKTrustyou: NSObject, NSCoding, NSCopying {
     public let score: Int
     public let popularity: Int

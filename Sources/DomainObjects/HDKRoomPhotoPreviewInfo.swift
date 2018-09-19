@@ -1,5 +1,6 @@
 import UIKit
 
+@objcMembers
 public final class HDKRoomPhotoPreviewInfo: NSObject, NSCoding {
 
     public let previewPhotoId: String
