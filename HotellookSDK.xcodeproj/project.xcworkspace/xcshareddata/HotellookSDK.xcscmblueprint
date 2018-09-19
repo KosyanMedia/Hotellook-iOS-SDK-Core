@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "CD902F6E8B9D2BED55CADFB5D957653711AE8BF8",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "D6A4273BD2AA02492A6C549926EAC2DE5AEB9B5C" : 9223372036854775807,
+    "CD902F6E8B9D2BED55CADFB5D957653711AE8BF8" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "5A8A5327-B86F-46A8-91C1-DC21E6531DB5",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "D6A4273BD2AA02492A6C549926EAC2DE5AEB9B5C" : "..",
+    "CD902F6E8B9D2BED55CADFB5D957653711AE8BF8" : "Hotellook-iOS-SDK-Core\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "HotellookSDK",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "HotellookSDK.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:KosyanMedia\/Hotellook-iOS-SDK-Core.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "CD902F6E8B9D2BED55CADFB5D957653711AE8BF8"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:KosyanMedia\/hotellook-ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D6A4273BD2AA02492A6C549926EAC2DE5AEB9B5C"
+    }
+  ]
+}

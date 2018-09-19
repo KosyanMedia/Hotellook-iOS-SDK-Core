@@ -1,0 +1,6 @@
+framework module HotellookSDK {
+  umbrella header "HotellookSDK.h"
+
+  export *
+  module * { export * }
+}
